@@ -27,12 +27,12 @@ Kalau dosen memperbaiki sesuatu di pertemuan yang sudah dirilis (mis. ada bug di
 Bagian di bawah ini **isi bertahap** sesuai level yang sedang kalian kerjakan (lihat `pertemuan-XX/SOAL.md`) — heading-nya dicek otomatis, jangan diganti namanya.
 
 ## Struktur Project
-(tulis di sini)
+main.tsx adalah file utama untuk sebuah page saat ini (ditentukan di body yang berada di 'index.html') yang berguna seperti canvas untuk nantinya diisi oleh berbagai Component. sedangkan, App.tsx adalah file Component tersebut yang ditaruh di sebuah page seperti main.tsx. untuk satu main.tsx bisa berisi satu atau lebih Components yang di import dari file-file component tersebut.
 
 ## Identitas
-- Nama: (tulis di sini)
-- NRP: (tulis di sini)
-- Kelas: (tulis di sini)
+- Nama: Muhammad Zaki Alfikri
+- NRP: 5053241034
+- Kelas: M
 
 ## Commit vs Push
 (tulis di sini)
