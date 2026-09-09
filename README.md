@@ -35,7 +35,7 @@ main.tsx adalah file utama untuk sebuah page saat ini (ditentukan di body yang b
 - Kelas: M
 
 ## Commit vs Push
-(tulis di sini)
+git commit adalah proses staging sebelum di push. dimana orang yang melakukan git commit maka code nya belum sampai di github. ketika masih di posisi staging, code yang di commit belum bisa di fetch oleh orang lain. sedangkan git push adalah proses ketika kode yang sudah di commit (di posisi staging) di publish ke branch github saat itu dan bisa di fetch orang lain. perubahan kode (unstaged changes) -> commit -> perubahan kode masuk ke staging -> push -> kode yg di staging di publish ke branch. ketika seseorang hanya melakukan commit tapi lupa push maka orang lain tidak bisa fetch/pull kode tersebut (yang di staging) resikonya kode bisa ter-overwrite dari kode yang di-push orang lain.
 
 ## JSX vs TSX
 (tulis di sini)
