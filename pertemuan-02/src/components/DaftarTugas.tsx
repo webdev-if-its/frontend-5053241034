@@ -3,6 +3,21 @@
 // <ul> berisi satu <li> per tugas — WAJIB beri `key` yang tepat di tiap
 // <li> (React akan mencatat warning kalau key hilang/salah, dan itu
 // dicek otomatis). Lihat SOAL.md untuk kontrak lengkap.
-export function DaftarTugas(props: any) {
-  return <p>TODO</p>
+
+type Props = {
+  tugas: string[]
+}
+
+export function DaftarTugas(props: Props) {
+  if (props.tugas.length === 0) {
+    return <p>Tidak ada tugas</p>
+  }
+
+  return (
+    <ul>
+      {props.tugas.map((tugas) => (
+        <li key={tugas} >{tugas}</li>
+      ))}
+    </ul>
+  )
 }
