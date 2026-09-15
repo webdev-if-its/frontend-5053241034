@@ -41,7 +41,7 @@ git commit adalah proses staging sebelum di push. dimana orang yang melakukan gi
 TSX memiliki type-checking untuk meminimalisir error atau kesalahan penulisan kode, sedangkan JSX tidak memiliki type-checking. Project ini memakai .tsx karena seperti sudah disebutkan sebelumnya .tsx lebih meminimalisir error dan kesalahan penulisan kdoe. selain itu, TSX dikatakan lebih dibutuhkan di banyak industri saat ini serta TSX sudah include fungsi-fungsi yang ada di JSX.
 
 ## Kenapa Union Type untuk Status
-(tulis di sini)
+dengan menggunakan Union Type nutuk Status dapat membatasi berbagai input agar hanya valid jika input tersebut sesuai dengan apa yang tertulis di Union Type Status yang kita tulis. misal seperti di soal, ```status: 'pending' | 'selesai' | 'batal'```, jika input yang diberikan adalah string selain dari ke-3 string status tersebut maka akan muncul error. sedangkan, jika menggunakan string bebas seperti ```status: string``` saja, maka input apapun selama input tersebut bertipe string akan tetap diproses dan dianggap valid. sehingga penggunaan string bebas menjadikan kode rawan error dari typo atau input yg tidak sesuai.
 
 ## Refleksi
 (tulis di sini)
