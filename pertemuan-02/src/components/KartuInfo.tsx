@@ -5,6 +5,21 @@
 //   ikut muncul kalau catatan tidak diisi)
 // - children (selalu tampil)
 // Lihat SOAL.md untuk kontrak lengkap.
-export function KartuInfo(props: any) {
-  return <div>TODO</div>
+
+import type { ReactNode } from "react"
+
+type Props = {
+  judul: string
+  catatan?: string
+  children: ReactNode
+}
+
+export function KartuInfo(props: Props) {
+  return (
+    <div>
+      <h2>{props.judul}</h2>
+      {props.catatan}
+      {props.children}
+    </div>
+  )
 }

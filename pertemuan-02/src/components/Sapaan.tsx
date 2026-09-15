@@ -7,7 +7,6 @@ type Props = {
   nama?: string
 }
 
-export function Sapaan(props: Props) {
-  const { nama = "Tamu" } = props;
+export function Sapaan({ nama = "Tamu" }: Props) {
   return <p>Halo, {nama}!</p>;
 }
