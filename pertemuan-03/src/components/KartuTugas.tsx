@@ -7,6 +7,22 @@
 //   bernilai true, dan TIDAK ada class itu sama sekali saat false,
 // - menampilkan teks tugas di dalamnya.
 // Lihat SOAL.md untuk kontrak lengkap.
-export function KartuTugas(props: any) {
-  return <div>TODO</div>
+
+import React from "react"
+
+type Props = {
+  teks: string;
+  selesai: boolean;
+}
+
+export function KartuTugas(props: Props) {
+  let message: React.ReactNode
+
+  if (props.selesai === true) {
+    message = <p className="p-4 rounded-x1 shadow-md line-through">{props.teks}</p>
+  } else {
+    message = <p className="p-4 rounded-x1 shadow-md">{props.teks}</p>
+  }
+
+  return message
 }
