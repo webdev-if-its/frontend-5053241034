@@ -45,3 +45,6 @@ dengan menggunakan Union Type nutuk Status dapat membatasi berbagai input agar h
 
 ## Refleksi
 menurutku konsep Component di React adalah hal yang paling terasa 'baru' disini, karena membuat penulisan kode menjadi lebih modular dan bongkar pasang terutama jika dibandingkan dengan HTML biasa. disini setiap Component berfungsi sebagai ```function``` yang akan di render jika komponen tersebut di return di ```App.tsx```. dan satu lagi adalah Props yang awalnya agak membingungkan bagaimana cara kerjanya, tetapi setelah dipelajari lagi ternyata berfungsi sebagai parameter dari sebuah Component.
+
+## Refleksi Pertemuan 3
+Menurutku penggunaan Tailwind sebagai cara untuk styling halaman website dengan menulis langsung style di dalam komponen sebagai atribut class merupakan cara yang sangat praktis karena tidak perlu membuat file baru lagi, seperti cara lama dengan membuat file style.css lalu diintegrasikan dgn file html. Tailwind juga memiliki cheatsheet yang dapat membantu developer untuk semakin cepat dalam pembuatan website tanpa membuat semua tampilannya dari awal, melainkan menggunakan pre-designed component yang sudah ada.
