@@ -3,6 +3,18 @@
 // HANYA ketika tombol Enter ditekan (onKeyDown + e.key) — tombol lain tidak
 // boleh memicu onCari.
 // Lihat SOAL.md untuk kontrak lengkap.
-export function KotakCari(props: any) {
-  return <p>TODO</p>
+
+import type React from "react"
+
+type Props = {
+  onCari: (kata: string) => void
+}
+
+export function KotakCari(props: Props) {
+  const handleChange = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === 'Enter') {
+      props.onCari(e.currentTarget.value)
+    }
+  }
+  return <input onKeyDown={handleChange}></input>
 }
