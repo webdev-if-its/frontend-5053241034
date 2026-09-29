@@ -48,3 +48,7 @@ menurutku konsep Component di React adalah hal yang paling terasa 'baru' disini,
 
 ## Refleksi Pertemuan 3
 Menurutku penggunaan Tailwind sebagai cara untuk styling halaman website dengan menulis langsung style di dalam komponen sebagai atribut class merupakan cara yang sangat praktis karena tidak perlu membuat file baru lagi, seperti cara lama dengan membuat file style.css lalu diintegrasikan dgn file html. Tailwind juga memiliki cheatsheet yang dapat membantu developer untuk semakin cepat dalam pembuatan website tanpa membuat semua tampilannya dari awal, melainkan menggunakan pre-designed component yang sudah ada.
+
+## Refleksi Pertemuan 4
+Variabel biasa tidak merender ulang ketika ada perubahan,misal jika suatu button di klik akan meng-increment variabel a (a++) program tidak akan merender ulang walaupun angka nya berubah secara memori. sedangkan state akan merender ulang setiap terjadi perubahan nilai state tersebut.
+jika ingin menghitung jumlah nilai yang ada di e.target.value maka perlu diubah dulu nilai nya ke number, jika tidak maka program akan menjalankan string + string dan bukan number + number, misal "20" + "10" maka akan menghasilkan "2010" dan bukan 40. karena default value dari e.target.value akan selalu string selama tidak ada yang mengubahnya.
