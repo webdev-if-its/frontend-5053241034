@@ -16,3 +16,4 @@ export function KotakInput(props: Props) {
   }
   return <input onChange={handleChange}></input>
 }
+
