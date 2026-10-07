@@ -4,6 +4,18 @@
 // useEffect (bukan di badan komponen), dan pastikan judul tab ikut berubah
 // saat prop judul berubah.
 // Lihat SOAL.md untuk kontrak lengkap.
-export function JudulHalaman(props: any) {
-  return <h1>TODO</h1>
+
+import { useEffect } from "react"
+
+type Props = {
+  judul: string
+}
+
+export function JudulHalaman({judul}: Props) {
+
+  useEffect(() => {
+    document.title = judul
+  })
+
+  return <h1>{judul}</h1>
 }
