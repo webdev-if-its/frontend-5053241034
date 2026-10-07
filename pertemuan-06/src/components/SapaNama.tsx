@@ -5,7 +5,31 @@
 // Pakai useEffect untuk mengubah document.title menjadi "Halo, {nama}"
 // (kalau nama kosong: "Halo, Tamu"). Efek HANYA boleh jalan ulang saat nama
 // berubah — klik tombol "+1" tidak boleh memicu efek (atur dependency array).
+
+import { useEffect, useState } from "react"
+
 // Lihat SOAL.md untuk kontrak lengkap.
-export function SapaNama(props: any) {
-  return <p>TODO</p>
+export function SapaNama() {
+
+  const [nama, setNama] = useState("")
+  const [jumlah, setJumlah] = useState(0)
+
+  useEffect(() => {
+    document.title = `Halo, ${ nama || "Tamu" }`
+  }, [nama])
+
+  return (
+    <div>
+      <label>Nama
+        <input value={nama} onChange={
+          (e) => {
+            setNama(e.target.value)          }
+        }/>
+      </label>
+      <button onClick={() => {
+        setJumlah(jumlah+1)
+      }}>+1</button>
+      <p>Klik: {jumlah}</p>
+    </div>
+  )
 }
