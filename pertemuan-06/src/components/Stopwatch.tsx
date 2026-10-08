@@ -4,7 +4,32 @@
 // di-Stop, timer HARUS benar-benar berhenti (tidak ada timer tersisa);
 // Start lagi melanjutkan dari angka terakhir. Gunakan state `jalan` sebagai
 // dependency efek.
+
+import { useEffect, useState } from "react"
+
 // Lihat SOAL.md untuk kontrak lengkap.
-export function Stopwatch(props: any) {
-  return <p>TODO</p>
+export function Stopwatch() {
+  const [detik, setDetik] = useState(0)
+  const [play, setPlay] = useState(false)
+
+  useEffect(() => {
+    if (play) {
+      const interval = setInterval(() => {
+        setDetik((d) => d + 1)
+      }, 1000);
+      
+      return () => {
+        clearInterval(interval)
+    }
+    }
+  }, [play])
+
+  return (
+    <div>
+      <p>{detik} detik</p>
+      <button onClick={() => {
+        setPlay(!play)
+      }}>{play? "Stop" : "Start"}</button>
+    </div>
+  )
 }
