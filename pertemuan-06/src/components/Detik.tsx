@@ -3,7 +3,22 @@
 // useEffect. Wajib: (a) pakai functional update setN((d) => d + 1), (b) ada
 // cleanup (clearInterval) supaya timer tidak menumpuk — termasuk saat
 // komponen dilepas (unmount).
+
+import { useEffect, useState } from "react"
+
 // Lihat SOAL.md untuk kontrak lengkap.
-export function Detik(props: any) {
-  return <p>TODO</p>
+export function Detik() {
+  const [detik, setDetik] = useState(0)
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setDetik((d) => d + 1)
+    }, 1000)
+
+    return () => {
+      clearInterval(interval)
+    }
+  }, [])
+
+  return <p>Detik: {detik}</p>
 }

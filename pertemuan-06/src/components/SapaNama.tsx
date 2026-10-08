@@ -15,7 +15,7 @@ export function SapaNama() {
   const [jumlah, setJumlah] = useState(0)
 
   useEffect(() => {
-    document.title = `Halo, ${ nama || "Tamu" }`
+    document.title = nama ? "Halo, " + nama : "Halo, Tamu"
   }, [nama])
 
   return (
@@ -23,8 +23,8 @@ export function SapaNama() {
       <label>Nama
         <input value={nama} onChange={
           (e) => {
-            setNama(e.target.value)          }
-        }/>
+            setNama(e.target.value)
+          }}/>
       </label>
       <button onClick={() => {
         setJumlah(jumlah+1)
