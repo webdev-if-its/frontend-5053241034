@@ -52,3 +52,7 @@ Menurutku penggunaan Tailwind sebagai cara untuk styling halaman website dengan 
 ## Refleksi Pertemuan 4
 Variabel biasa tidak merender ulang ketika ada perubahan,misal jika suatu button di klik akan meng-increment variabel a (a++) program tidak akan merender ulang walaupun angka nya berubah secara memori. sedangkan state akan merender ulang setiap terjadi perubahan nilai state tersebut.
 jika ingin menghitung jumlah nilai yang ada di e.target.value maka perlu diubah dulu nilai nya ke number, jika tidak maka program akan menjalankan string + string dan bukan number + number, misal "20" + "10" maka akan menghasilkan "2010" dan bukan 40. karena default value dari e.target.value akan selalu string selama tidak ada yang mengubahnya.
+
+## Refleksi Pertemuan 6
+
+cleanup wajib dilakukan karena efek yang memasang timer atau listener akan terus berjalan walaupun komponen sudah di unmount, sehingga akan menyebabkan memory leak dan performa aplikasi menurun. jika cleanup dilupakan maka efek tersebut akan tetap berjalan di background dan bisa menyebabkan bug atau perilaku aneh. console.log di efek muncul dua kali saat development karena fiutr bawaan React StrictMode memanggil efek dua kali untuk pengecekan ekstra yang membantu mendeteksi potensi masalah dalam kode.
