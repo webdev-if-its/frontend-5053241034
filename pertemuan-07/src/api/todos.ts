@@ -3,24 +3,32 @@
 // Beri tipe yang tepat (impor tipe Todo dari '../types'); tanda tangan
 // lengkapnya ada di SOAL.md.
 //
-// export const BASE_URL = 'https://jsonplaceholder.typicode.com/todos'
+export const BASE_URL = "https://jsonplaceholder.typicode.com/todos";
+
+import { useEffect } from "react";
+import type { Todo } from "../types";
+import { error } from "console";
 
 // Level 1 & 2
-export async function getTodos(): Promise<any> {
-  throw new Error('TODO')
+export async function getTodos(): Promise<Todo[]> {
+  const res = await fetch(BASE_URL);
+  if (!res.ok) {
+    throw new Error("Gagal mengambil data");
+  }
+  return res.json();
 }
 
 // Level 3
 export async function addTodo(title: any): Promise<any> {
-  throw new Error('TODO')
+  throw new Error("TODO");
 }
 
 // Level 4
 export async function updateTodo(id: any, completed: any): Promise<any> {
-  throw new Error('TODO')
+  throw new Error("TODO");
 }
 
 // Level 5
 export async function hapusTodo(id: any): Promise<any> {
-  throw new Error('TODO')
+  throw new Error("TODO");
 }
