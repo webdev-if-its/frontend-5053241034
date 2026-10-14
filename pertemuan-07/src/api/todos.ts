@@ -5,9 +5,7 @@
 //
 export const BASE_URL = "https://jsonplaceholder.typicode.com/todos";
 
-import { useEffect } from "react";
 import type { Todo } from "../types";
-import { error } from "console";
 
 // Level 1 & 2
 export async function getTodos(): Promise<Todo[]> {
@@ -15,12 +13,24 @@ export async function getTodos(): Promise<Todo[]> {
   if (!res.ok) {
     throw new Error("Gagal mengambil data");
   }
-  return res.json();
+  return await res.json();
 }
 
 // Level 3
-export async function addTodo(title: any): Promise<any> {
-  throw new Error("TODO");
+export async function addTodo(title: string): Promise<Todo> {
+  const res = await fetch(BASE_URL, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      title,
+      completed: false,
+      userId: 1,
+    }),
+  });
+  if (!res.ok) {
+    throw new Error("Gagal menambahkan data");
+  }
+  return await res.json();
 }
 
 // Level 4
