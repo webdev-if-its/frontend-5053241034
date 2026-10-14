@@ -52,6 +52,12 @@ export async function updateTodo(
 }
 
 // Level 5
-export async function hapusTodo(id: any): Promise<any> {
-  throw new Error("TODO");
+export async function hapusTodo(id: number): Promise<void> {
+  const res = await fetch(`${BASE_URL}/${id}`, {
+    method: "DELETE",
+    headers: { "Content-Type": "application/json" },
+  });
+  if (!res.ok) {
+    throw new Error("Gagal hapus data");
+  }
 }
