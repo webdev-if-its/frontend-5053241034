@@ -56,3 +56,7 @@ jika ingin menghitung jumlah nilai yang ada di e.target.value maka perlu diubah 
 ## Refleksi Pertemuan 6
 
 cleanup wajib dilakukan karena efek yang memasang timer atau listener akan terus berjalan walaupun komponen sudah di unmount, sehingga akan menyebabkan memory leak dan performa aplikasi menurun. jika cleanup dilupakan maka efek tersebut akan tetap berjalan di background dan bisa menyebabkan bug atau perilaku aneh. console.log di efek muncul dua kali saat development karena fiutr bawaan React StrictMode memanggil efek dua kali untuk pengecekan ekstra yang membantu mendeteksi potensi masalah dalam kode.
+
+## Refleksi Pertemuan 9
+
+Memisahkan fungsi API dari komponen membuat kode lebih rapi, mudah diuji, dan mudah digunakan kembali. fetch tidak otomatis melempar error untuk respons HTTP 404 atau 500 karena respons tersebut tetap dianggap berhasil diterima. Oleh karena itu, kita perlu memeriksa res.ok dan melempar error secara manual jika respons gagal.
