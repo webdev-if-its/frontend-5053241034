@@ -4,7 +4,16 @@
 // - increment(): count + 1, decrement(): count - 1,
 // - reset(): kembali ke `initial` (bukan selalu 0).
 // Tiap pemanggilan useCounter() punya state SENDIRI. Beri tipe parameter dan
+
+import { useState } from "react";
+
 // return yang tepat — lihat SOAL.md untuk tanda tangan lengkapnya.
-export function useCounter(initial?: any): any {
-  return { count: 0, increment: () => {}, decrement: () => {}, reset: () => {} }
+export function useCounter(initial: number = 0) {
+  const [count, setCount] = useState(initial);
+
+  const increment = () => setCount((c) => c + 1);
+  const decrement = () => setCount((c) => c - 1);
+  const reset = () => setCount(initial);
+
+  return { count, increment, decrement, reset };
 }
