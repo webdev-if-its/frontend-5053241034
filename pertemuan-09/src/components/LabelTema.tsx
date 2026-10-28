@@ -2,7 +2,11 @@
 // teks "Tema saat ini: {tema}". Komponen ini tidak menerima apa pun lewat
 // props, tapi harus ikut berubah saat TombolTema diklik (berbagi state lewat
 // Context, bukan props drilling).
+
+import { useTema } from "../context/TemaContext"
+
 // Lihat SOAL.md untuk kontrak lengkap.
-export function LabelTema(props: any) {
-  return <p>TODO</p>
+export function LabelTema() {
+  const { tema, gantiTema } = useTema();
+  return <p>Tema saat ini: {tema}</p>
 }

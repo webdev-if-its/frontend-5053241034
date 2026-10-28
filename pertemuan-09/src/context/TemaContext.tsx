@@ -10,7 +10,6 @@
 import React, { useContext, useState } from "react"
 import type { Tema } from "../types"
 import { createContext } from "react"
-import { error } from "console"
 
 type TemaContextType = {
   tema: Tema
