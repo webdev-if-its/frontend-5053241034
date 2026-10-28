@@ -26,7 +26,7 @@ export function useFetch<T>(url: string) {
 
         if (!res.ok) {
           setError("fetch gagal");
-          throw new Error(`HTTP error! Status: ${res.status}`);
+          setLoading(false);
         }
 
         const result = await res.json();
@@ -34,6 +34,7 @@ export function useFetch<T>(url: string) {
       } catch (err) {
         if (err instanceof Error) {
           setError(err.message);
+          setLoading(false);
         }
       } finally {
         setLoading(false);
